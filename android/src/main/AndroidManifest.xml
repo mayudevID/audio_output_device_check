@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.arrauda.audio_output_device_check">
+
+  <!-- Bluetooth permission for Android < 12 (API level 31) -->
+  <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+
+  <!-- Bluetooth permission for Android >= 12 (API level 31+) to get device names -->
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+</manifest>
