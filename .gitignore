@@ -31,3 +31,24 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 /build/
 /coverage/
+
+.cursorrules
+.mcp.json
+.opencode.json
+.windsurfrules
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+QODER.md
+.agents/
+skills-lock.json
+settings.json
+.claude
+.gemini
+.github
+.kiro
+.qoder
+.vscode
+
+# Added by code-review-graph
+.code-review-graph/

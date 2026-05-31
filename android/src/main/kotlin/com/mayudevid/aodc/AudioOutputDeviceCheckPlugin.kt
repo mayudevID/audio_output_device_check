@@ -1,4 +1,4 @@
-package com.arrauda.audio_output_device_check
+package com.mayudevid.aodc
 
 import android.bluetooth.BluetoothA2dp
 import android.bluetooth.BluetoothAdapter

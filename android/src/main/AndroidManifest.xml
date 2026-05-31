@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.arrauda.audio_output_device_check">
+  package="com.mayudevid.aodc">
 
   <!-- Bluetooth permission for Android < 12 (API level 31) -->
   <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
