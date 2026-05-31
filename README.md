@@ -1,5 +1,9 @@
 # audio_output_device_check
 
+[![pub package](https://img.shields.io/pub/v/audio_output_device_check.svg)](https://pub.dev/packages/audio_output_device_check)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/mayudevID/audio_output_device_check/actions/workflows/ci.yml/badge.svg)](https://github.com/mayudevID/audio_output_device_check/actions/workflows/ci.yml)
+
 Flutter plugin to detect current audio output device and listen for output changes.
 
 ## Supported Platforms

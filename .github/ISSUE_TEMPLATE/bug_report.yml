@@ -1,0 +1,68 @@
+name: Bug report
+description: Report bug in audio_output_device_check
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please provide complete details.
+
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      placeholder: e.g. 0.1.1
+    validations:
+      required: true
+
+  - type: input
+    id: flutter
+    attributes:
+      label: Flutter version
+      placeholder: output of `fvm flutter --version`
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Android
+        - iOS
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: Step-by-step to reproduce
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / stack trace
+      render: shell
+    validations:
+      required: false
