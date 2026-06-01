@@ -35,7 +35,7 @@ class MethodChannelAudioOutputDeviceCheck
             debugPrint('Unexpected event type: ${event.runtimeType}');
             const info = AudioDeviceInfo(
               type: 'unknown',
-              name: 'Perangkat tidak diketahui',
+              name: 'Unknown device',
             );
             _lastKnown = info;
             return info;
@@ -43,7 +43,7 @@ class MethodChannelAudioOutputDeviceCheck
             debugPrint('Error parsing audio device info: $e');
             const info = AudioDeviceInfo(
               type: 'unknown',
-              name: 'Perangkat tidak diketahui',
+              name: 'Unknown device',
             );
             _lastKnown = info;
             return info;
@@ -85,18 +85,12 @@ class MethodChannelAudioOutputDeviceCheck
     try {
       final result = await methodChannel.invokeMethod<Map>('getCurrentDevice');
       if (result == null) {
-        return const AudioDeviceInfo(
-          type: 'unknown',
-          name: 'Perangkat tidak diketahui',
-        );
+        return const AudioDeviceInfo(type: 'unknown', name: 'Unknown device');
       }
       return AudioDeviceInfo.fromMap(result);
     } catch (e) {
       debugPrint('Error getting current device: $e');
-      return const AudioDeviceInfo(
-        type: 'unknown',
-        name: 'Perangkat tidak diketahui',
-      );
+      return const AudioDeviceInfo(type: 'unknown', name: 'Unknown device');
     }
   }
 

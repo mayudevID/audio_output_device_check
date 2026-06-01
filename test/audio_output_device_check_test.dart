@@ -63,7 +63,7 @@ void main() {
       final device = AudioDeviceInfo.fromMap(map);
 
       expect(device.type, 'unknown');
-      expect(device.name, 'Perangkat tidak diketahui');
+      expect(device.name, 'Unknown device');
     });
 
     test('equality works correctly', () {
@@ -71,7 +71,7 @@ void main() {
       const device2 = AudioDeviceInfo(type: 'bluetooth', name: 'AirPods');
       const device3 = AudioDeviceInfo(
         type: 'wired',
-        name: 'Perangkat output audio',
+        name: 'Audio output device',
       );
 
       expect(device1, equals(device2));
@@ -127,7 +127,7 @@ void main() {
         const device2 = AudioDeviceInfo(type: 'bluetooth', name: 'AirPods');
         const device3 = AudioDeviceInfo(
           type: 'wired',
-          name: 'Perangkat output audio',
+          name: 'Audio output device',
         );
 
         final devices = <AudioDeviceInfo>[];

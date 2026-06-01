@@ -27,7 +27,7 @@ static FlValue* build_unknown_device_payload() {
   FlValue* payload = fl_value_new_map();
   fl_value_set_string_take(payload, "type", fl_value_new_string("unknown"));
   fl_value_set_string_take(payload, "name",
-                           fl_value_new_string("Perangkat tidak diketahui"));
+                           fl_value_new_string("Unknown device"));
   return payload;
 }
 

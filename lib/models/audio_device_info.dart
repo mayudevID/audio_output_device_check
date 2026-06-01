@@ -6,7 +6,7 @@ class AudioDeviceInfo {
   factory AudioDeviceInfo.fromMap(Map<dynamic, dynamic> map) {
     return AudioDeviceInfo(
       type: map['type'] as String? ?? 'unknown',
-      name: map['name'] as String? ?? 'Perangkat tidak diketahui',
+      name: map['name'] as String? ?? 'Unknown device',
     );
   }
 
@@ -15,7 +15,7 @@ class AudioDeviceInfo {
 
   /// The display name of the device
   /// - For Bluetooth devices: the brand/device name (e.g., "AirPods", "Sony WH-1000XM4")
-  /// - For wired devices: "Perangkat output audio"
+  /// - For wired devices: "Audio output device"
   /// - For speaker: "Speaker"
   final String name;
 

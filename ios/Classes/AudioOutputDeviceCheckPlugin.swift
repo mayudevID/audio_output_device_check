@@ -76,7 +76,7 @@ public class AudioOutputDeviceCheckPlugin: NSObject, FlutterPlugin, FlutterStrea
             return ["type": "bluetooth", "name": portName]
 
         case .headphones, .headsetMic:
-            return ["type": "wired", "name": "Perangkat output audio"]
+            return ["type": "wired", "name": "Audio output device"]
 
         case .builtInSpeaker:
             return ["type": "speaker", "name": "Speaker"]

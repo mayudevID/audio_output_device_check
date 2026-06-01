@@ -424,7 +424,7 @@ class AudioOutputDeviceCheckPlugin :
                     android.util.Log.d("AudioOutputDevice", "Found wired device")
                     return mapOf(
                         "type" to "wired",
-                        "name" to "Perangkat output audio"
+                        "name" to "Audio output device"
                     )
                 }
             }
@@ -442,7 +442,7 @@ class AudioOutputDeviceCheckPlugin :
             if (audioManager.isWiredHeadsetOn) {
                 return mapOf(
                     "type" to "wired",
-                    "name" to "Perangkat output audio"
+                    "name" to "Audio output device"
                 )
             }
 

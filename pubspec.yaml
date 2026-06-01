@@ -1,6 +1,6 @@
 name: audio_output_device_check
 description: "Detect active audio output device and monitor output changes across Flutter platforms."
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/mayudevID/audio_output_device_check
 repository: https://github.com/mayudevID/audio_output_device_check
 issue_tracker: https://github.com/mayudevID/audio_output_device_check/issues

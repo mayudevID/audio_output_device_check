@@ -22,7 +22,7 @@ flutter::EncodableMap BuildUnknownDevicePayload() {
   flutter::EncodableMap payload;
   payload[flutter::EncodableValue("type")] = flutter::EncodableValue("unknown");
   payload[flutter::EncodableValue("name")] =
-      flutter::EncodableValue("Perangkat tidak diketahui");
+      flutter::EncodableValue("Unknown device");
   return payload;
 }
 

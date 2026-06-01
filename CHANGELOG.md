@@ -1,3 +1,10 @@
+## 0.1.2
+
+* Normalize default/fallback device names to English across platforms:
+  * `Perangkat tidak diketahui` -> `Unknown device`
+  * `Perangkat output audio` -> `Audio output device`
+* Update Dart model defaults and tests to match new naming.
+
 ## 0.1.1
 
 * Add complete package metadata for `pub.dev`:
