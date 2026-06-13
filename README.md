@@ -20,7 +20,7 @@ Add dependency in your app `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  audio_output_device_check: ^0.1.1
+  audio_output_device_check: ^0.2.0
 ```
 
 ## Usage
@@ -28,11 +28,15 @@ dependencies:
 ```dart
 import 'package:audio_output_device_check/audio_output_device_check.dart';
 
-final plugin = AudioOutputDeviceCheck();
-plugin.audioDeviceStreamWithPermission(
-  autoRequestAndroidBluetoothPermission: true,
-).listen((device) {
-  print('Audio output changed: ${device.type} - ${device.name}');
+final plugin = AudioOutputDeviceCheck(
+  autoRequestBluetoothPermission: true,
+);
+
+final current = await plugin.currentDevice();
+print('Current output: ${current.type.name} - ${current.name}');
+
+plugin.deviceStream.listen((device) {
+  print('Audio output changed: ${device.type.name} - ${device.name}');
 });
 ```
 
@@ -46,17 +50,35 @@ final requested = await plugin.requestBluetoothConnectPermission();
 ```
 
 Behavior:
-- On Android: permission can be requested automatically when stream starts.
+- On Android: permission is requested automatically at most once per plugin
+  instance when `deviceStream` or `currentDevice()` is used.
+- Set `autoRequestBluetoothPermission: false` to disable automatic requests.
 - On non-Android platforms: permission APIs return `BluetoothPermissionStatus.notApplicable`.
 - On permission/API failures: plugin returns safe fallback device info instead of throwing.
 
 ## Device Type Values
 
-`AudioDeviceInfo.type` can be:
-- `bluetooth`
-- `wired`
-- `speaker`
-- `unknown`
+`AudioDeviceInfo.type` uses the `AudioDeviceType` enum:
+- `AudioDeviceType.bluetooth`
+- `AudioDeviceType.wired`
+- `AudioDeviceType.speaker`
+- `AudioDeviceType.unknown`
+
+## Migrating from 0.1.x
+
+```dart
+// Before
+plugin.audioDeviceStreamWithPermission().listen(...);
+if (device.type == 'bluetooth') {}
+
+// 0.2.0
+plugin.deviceStream.listen(...);
+if (device.type == AudioDeviceType.bluetooth) {}
+```
+
+`BluetoothPermissionStatus.permanentlyDenied` and
+`BluetoothPermissionStatus.restricted` were removed because they could not be
+reported consistently across supported platforms.
 
 ## Notes
 

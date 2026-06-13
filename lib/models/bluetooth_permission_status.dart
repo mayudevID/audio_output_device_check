@@ -1,21 +1,24 @@
+/// The Android Bluetooth connection permission status.
 enum BluetoothPermissionStatus {
+  /// Permission is granted.
   granted,
+
+  /// Permission is denied.
   denied,
-  permanentlyDenied,
-  restricted,
+
+  /// Bluetooth permission is not required on this platform.
   notApplicable,
+
+  /// Permission status could not be determined.
   unknown;
 
+  /// Converts a native platform channel value to a permission status.
   static BluetoothPermissionStatus fromName(String? value) {
     switch (value) {
       case 'granted':
         return BluetoothPermissionStatus.granted;
       case 'denied':
         return BluetoothPermissionStatus.denied;
-      case 'permanentlyDenied':
-        return BluetoothPermissionStatus.permanentlyDenied;
-      case 'restricted':
-        return BluetoothPermissionStatus.restricted;
       case 'notApplicable':
         return BluetoothPermissionStatus.notApplicable;
       default:

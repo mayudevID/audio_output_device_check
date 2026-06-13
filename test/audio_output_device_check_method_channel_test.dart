@@ -32,7 +32,7 @@ void main() {
   test('getCurrentDevice decodes map payload', () async {
     final plugin = MethodChannelAudioOutputDeviceCheck();
     final device = await plugin.getCurrentDevice();
-    expect(device.type, 'bluetooth');
+    expect(device.type, AudioDeviceType.bluetooth);
     expect(device.name, 'AirPods');
   });
 

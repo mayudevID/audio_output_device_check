@@ -47,8 +47,7 @@ class _AudioDeviceDemoState extends State<AudioDeviceDemo> {
               ),
               const SizedBox(height: 32),
               StreamBuilder<AudioDeviceInfo>(
-                stream: _audioOutputDeviceCheckPlugin
-                    .audioDeviceStreamWithPermission(),
+                stream: _audioOutputDeviceCheckPlugin.deviceStream,
                 builder: (context, snapshot) {
                   if (snapshot.hasError) {
                     return _buildErrorState(snapshot.error.toString());
@@ -111,7 +110,7 @@ class _AudioDeviceDemoState extends State<AudioDeviceDemo> {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                device.type.toUpperCase(),
+                device.type.name.toUpperCase(),
                 style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
@@ -157,28 +156,28 @@ class _AudioDeviceDemoState extends State<AudioDeviceDemo> {
     );
   }
 
-  IconData _getIconForDeviceType(String type) {
+  IconData _getIconForDeviceType(AudioDeviceType type) {
     switch (type) {
-      case 'bluetooth':
+      case AudioDeviceType.bluetooth:
         return Icons.bluetooth_audio;
-      case 'wired':
+      case AudioDeviceType.wired:
         return Icons.headset;
-      case 'speaker':
+      case AudioDeviceType.speaker:
         return Icons.speaker;
-      default:
+      case AudioDeviceType.unknown:
         return Icons.volume_up;
     }
   }
 
-  Color _getColorForDeviceType(String type) {
+  Color _getColorForDeviceType(AudioDeviceType type) {
     switch (type) {
-      case 'bluetooth':
+      case AudioDeviceType.bluetooth:
         return Colors.blue;
-      case 'wired':
+      case AudioDeviceType.wired:
         return Colors.green;
-      case 'speaker':
+      case AudioDeviceType.speaker:
         return Colors.orange;
-      default:
+      case AudioDeviceType.unknown:
         return Colors.grey;
     }
   }

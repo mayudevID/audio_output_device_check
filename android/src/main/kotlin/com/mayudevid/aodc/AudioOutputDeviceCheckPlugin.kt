@@ -346,15 +346,7 @@ class AudioOutputDeviceCheckPlugin :
 
         if (granted) return "granted"
 
-        val activity = activityBinding?.activity ?: return "denied"
-        return if (activity.shouldShowRequestPermissionRationale(
-                android.Manifest.permission.BLUETOOTH_CONNECT
-            )
-        ) {
-            "denied"
-        } else {
-            "permanentlyDenied"
-        }
+        return "denied"
     }
 
     private fun requestBluetoothConnectPermission(result: Result) {
